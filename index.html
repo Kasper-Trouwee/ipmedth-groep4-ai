@@ -1,0 +1,53 @@
+<html lang="ne">
+<head>
+<meta charset="UTF-8" />
+<title>AI tekenen</title>
+
+<!-- bs4 css -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"/>
+	
+<!-- css pie -->
+<link rel="stylesheet" href="pie.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+<!-- TensorFlow.js script -->
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"> </script>
+	
+<!-- canvas script -->
+<script src="fabric.js"></script>
+
+<!-- main css -->
+<link rel = "stylesheet" href="main.css" > 
+	
+</head>
+<body>
+  <nav class="navbar">
+    <button type="button" class="nav_item" onclick ='erase()' disabled>Clear</button>
+    <button type="button" class="nav_item" id="beginnen" onclick ='choose_drawing()' disabled>Begin</button>
+    <p id="time-left">Tijd over</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;</p>
+    <p id="onderwerp">onderwerp</p>
+  </nav>
+  <section class="canvas_wrapper">
+      <canvas id="canvas" class="canvas"></canvas>
+  </section>
+  <section class="popup">
+    <h2>PLACEHOLDER</h2>
+    <button onclick="closePopUp()">Volgende</button>
+  </section>
+</body>
+<!-- main script -->
+<script src = "main.js" ></script>
+<script>
+	console.log('starting');
+	start('en')
+</script>
+</html>

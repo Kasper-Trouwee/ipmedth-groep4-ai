@@ -1,0 +1,73 @@
+*,*::before,*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar{
+    top: 0;
+    left: 0;
+    font-size: 30px;
+    display: list-item;
+    background-color: beige;
+    height: 10vh;
+}
+
+.navbar * {
+    float: left;
+}
+
+.nav_item{
+    border: none;
+    background-color:cornflowerblue;
+    padding: 5px 10px;
+    margin-right: 20px;
+}
+
+.pie_chart{
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 10vh;
+    background-color: beige;
+    padding: 15px;
+}
+
+.canvas_wrapper{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+canvas {
+    border: 3px black solid;
+}
+
+.popup {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: beige;
+    border: 3px black solid;
+    flex-direction: column;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup h2 {
+    background-color: aliceblue;
+    padding: 15px;
+}
+
+.popup button {
+    background-color: white;
+    padding: 10px 15px;
+    margin: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
