@@ -100,6 +100,7 @@ function getFrame() {
 
         //get the image data from the canvas 
         const imgData = getImageData()
+        console.log(imgData);
 
         //get the prediction 
         const pred = model.predict(preprocess(imgData)).dataSync()
@@ -107,9 +108,18 @@ function getFrame() {
         //find the top 5 predictions 
         const indices = findIndicesOfMax(pred, 5)
         const probs = findTopValues(pred, 5)
-        names = getClassNames(indices)
+        names = getClassNames(indices);
+        getTop5(names, probs);
     }
 
+}
+
+function getTop5(top5, probs) {
+    //loop over the predictions 
+    for (let i = 0; i < top5.length; i++) {
+        console.log(top5[i] + " : " +  Math.round(probs[i] * 100));
+    }
+    console.log("\n");
 }
 
 /*
@@ -117,8 +127,9 @@ get the the class names
 */
 function getClassNames(indices) {
     var outp = []
-    for (var i = 0; i < indices.length; i++)
+    for (var i = 0; i < indices.length; i++) {
         outp[i] = classNames[indices[i]]
+    }
     return outp
 }
 
@@ -126,7 +137,7 @@ function getClassNames(indices) {
 load the class names 
 */
 async function loadDict() {
-    loc = 'model/class_names.txt'
+    loc = 'modelV2/class_names.txt'
     
     await $.ajax({
         url: loc,
@@ -202,7 +213,7 @@ async function start(cur_mode) {
     mode = cur_mode
     
     //load the model 
-    model = await tf.loadLayersModel('model/model.json')
+    model = await tf.loadLayersModel('modelV2/model.json')
     
     //warm up 
     model.predict(tf.zeros([1, 28, 28, 1]))

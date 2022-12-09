@@ -1,20 +1,5 @@
+sun
+fish
 sword
-parrot
-palm tree
-diving board
-jail
-map
-castle
-crown
-cat
-horse
-circle
-triangle
-The Eiffel Tower
-axe
-apple
-bird
-book
-bread
-bus
-candle
+hat
+cannon
